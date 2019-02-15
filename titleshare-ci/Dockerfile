@@ -20,4 +20,3 @@ ENV PATH=~/.local/bin:$PATH
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
 RUN apt-get install -y nodejs
 
-
