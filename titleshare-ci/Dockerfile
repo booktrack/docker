@@ -24,5 +24,9 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install -y yarn
 
+RUN VER="17.03.0-ce" \
+       && curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz \
+       && tar -xz -C /tmp -f /tmp/docker-$VER.tgz \
+       && mv /tmp/docker/* /usr/bin
 
 
